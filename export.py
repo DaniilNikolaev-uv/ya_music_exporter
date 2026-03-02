@@ -30,12 +30,7 @@ def save_to_file():
                 if track.albums and len(track.albums) > 0:
                     album_title = track.albums[0].title
 
-                f.write(f"Исполнитель(и): {artists_names}\n")
-                f.write(f"Название: {track.title}\n")
-                f.write(f"Альбом: {album_title}\n")
-                f.write(f"Длительность: {track.duration_ms // 1000} секунд\n")
-
-                f.write("-" * 50 + "\n\n")  # Разделитель между треками
+                f.write(f"{artists_names}, {track.title}\n")
                 print(f"Обработан трек {i + 1} из {tracks_count}")
 
             except Exception as e:
