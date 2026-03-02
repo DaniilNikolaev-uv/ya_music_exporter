@@ -17,21 +17,21 @@
 ## Для тех кто использует uv
 
 ```bash
-    uv sync
+uv sync
 
-    uv run export.py
+uv run export.py
 ```
 
 ## Для тех кто использует pip
 
 ```bash
-    python -m venv .venv
+python -m venv .venv
 
-    source .venv/bin/activate
+source .venv/bin/activate
     
-    pip install -r requirements.txt
+pip install -r requirements.txt
 
-    python export.py
+python export.py
 ```
 
 # Итог: все песни будут по пути output/songs.txt
