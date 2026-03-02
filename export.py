@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Инициализация клиента
-client = Client(os.getenv("token")).init()
+client = Client(os.getenv("ya_token")).init()
 
 # Получаем ВСЕ лайкнутые треки
 liked_tracks = client.users_likes_tracks()
@@ -34,14 +34,6 @@ def save_to_file():
                 f.write(f"Название: {track.title}\n")
                 f.write(f"Альбом: {album_title}\n")
                 f.write(f"Длительность: {track.duration_ms // 1000} секунд\n")
-
-                if track.lyrics_available:
-                    try:
-                        lyrics = track.get_lyrics()
-                        if lyrics and hasattr(lyrics, "lyrics"):
-                            f.write(f"\nТекст песни:\n{lyrics.lyrics}\n")
-                    except:
-                        f.write("\nТекст песни недоступен\n")
 
                 f.write("-" * 50 + "\n\n")  # Разделитель между треками
                 print(f"Обработан трек {i + 1} из {tracks_count}")
