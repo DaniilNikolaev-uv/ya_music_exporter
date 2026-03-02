@@ -25,11 +25,6 @@ def save_to_file():
                 # Исполнителей может быть несколько, объединяем всех через запятую
                 artists_names = ", ".join([artist.name for artist in track.artists])
 
-                # Проверяем наличие альбома
-                album_title = "Неизвестный альбом"
-                if track.albums and len(track.albums) > 0:
-                    album_title = track.albums[0].title
-
                 f.write(f"{artists_names}, {track.title}\n")
                 print(f"Обработан трек {i + 1} из {tracks_count}")
 
